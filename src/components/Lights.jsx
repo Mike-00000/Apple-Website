@@ -64,7 +64,7 @@ const Lights = () => {
         angle={0.15}
         penumbra={1}
         decay={0.1}
-        intensity={Math.PI * 3}
+        intensity={Math.PI * 5}
       />
     </group>
   );
