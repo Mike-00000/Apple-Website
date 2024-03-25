@@ -4,12 +4,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 export const animateWithGsap = (target, animationProps, scrollProps) => {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
   gsap.to(target, {
     ...animationProps,
     scrollTrigger: {
       trigger: target,
-      toggleActions: 'restart reverse restart reverse',
-      start: 'top 85%',
+      toggleActions: isMobile ? "reverse restart reverse restart" : "restart reverse restart reverse",
+      start: 'top 80%+=20%',
       ...scrollProps,
     }
   })
